@@ -718,7 +718,7 @@ def make_forest(data, n_neighbors, n_trees, rng_state, angular=False):
             flatten_tree(make_tree(data, rng_state, leaf_size, angular), leaf_size)
             for i in range(n_trees)
         ]
-    except (RuntimeError, RecursionError, SystemError):
+    except (RuntimeError, SystemError):
         warn(
             "Random Projection forest initialisation failed due to recursion"
             "limit being reached. Something is a little strange with your "
